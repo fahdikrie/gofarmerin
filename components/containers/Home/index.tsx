@@ -1,5 +1,4 @@
-import TitleSection from "./TitleSection";
-
+import TitleSection from './TitleSection';
 
 const Home = () => (
   <>
