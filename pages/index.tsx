@@ -1,7 +1,13 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
+
+import Layout from 'components/layout';
 
 const Homepage: NextPage = () => {
-  return <></>
-}
+  return (
+    <Layout>
+      <p></p>
+    </Layout>
+  );
+};
 
-export default Homepage
+export default Homepage;
