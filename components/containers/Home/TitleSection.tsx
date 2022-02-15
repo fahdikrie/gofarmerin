@@ -31,8 +31,7 @@ export default function TitleSection() {
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
           >
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-            eiusmod tempor
+            Go Farmer Nusantara
           </Text>
           <Stack direction={'row'}>
             <Button
