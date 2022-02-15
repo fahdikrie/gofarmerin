@@ -34,7 +34,7 @@ export default function WithSubnavigation() {
   return (
     <Box
       bg={isOpen ? 'white' : useNavbarState('transparent', 'white')}
-      transition="all 0.5s ease-in-out"
+      transition="all 0.3s ease-out"
       position={'fixed'}
       zIndex={'10'}
       w={'100vw'}
@@ -43,7 +43,7 @@ export default function WithSubnavigation() {
         py={useNavbarState('2rem', '1rem')}
         minH={{ base: '4rem', md: '5rem' }}
         justifyContent={'space-between'}
-        transition="all 0.5s ease-out"
+        transition="all 0.3s ease-out"
         px={{ base: '1rem' }}
         align={'center'}
         maxW={'6xl'}
