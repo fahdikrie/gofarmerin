@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
   Flex,
@@ -10,7 +11,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -33,22 +33,13 @@ export default function WithSubnavigation() {
 
   return (
     <Box
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      bg={
-        isOpen
-          ? 'white'
-          : useNavbarState(
-              'transparent',
-              useColorModeValue('white', 'gray.100')
-            )
-      }
+      bg={isOpen ? 'white' : useNavbarState('transparent', 'white')}
       transition="all 0.5s ease-in-out"
       position={'fixed'}
       zIndex={'10'}
       w={'100vw'}
     >
       <Flex
-        color={useNavbarState('white', useColorModeValue('white', 'gray.100'))}
         py={useNavbarState('2rem', '1rem')}
         minH={{ base: '4rem', md: '5rem' }}
         justifyContent={'space-between'}
@@ -109,9 +100,14 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const isNavbarTransparent = useNavbarScroll();
+
+  const useNavbarState = (state1: string, state2: string) =>
+    isNavbarTransparent ? state1 : state2;
+
+  const linkColor = useNavbarState('white', 'gray.600');
+  const linkHoverColor = useNavbarState('gray.200', 'white');
+  const popoverContentBgColor = useNavbarState('white', 'gray.800');
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -123,7 +119,7 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize={'sm'}
-                fontWeight={500}
+                fontWeight={600}
                 color={linkColor}
                 _hover={{
                   textDecoration: 'none',
@@ -165,7 +161,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItemType) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: 'pink.50' }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
@@ -196,11 +192,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItemType) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}
-    >
+    <Stack bg={'white'} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -223,10 +215,7 @@ const MobileNavItem = ({ label, children, href }: NavItemType) => {
           textDecoration: 'none',
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
-        >
+        <Text fontWeight={600} color={'gray.600'}>
           {label}
         </Text>
         {children && (
@@ -246,7 +235,7 @@ const MobileNavItem = ({ label, children, href }: NavItemType) => {
           pl={4}
           borderLeft={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          borderColor={'gray.200'}
           align={'start'}
         >
           {children &&
