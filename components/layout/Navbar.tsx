@@ -22,35 +22,26 @@ import {
 import Image from 'next/image';
 
 import { NavItemType, NAV_ITEMS } from './constants';
-import { useEffect, useState } from 'react';
+import useNavbarScroll from 'hooks/useNavbarScroll';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-  const [isNavbarTransparent, setNavbarTransparency] = useState(true);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const onScroll = () => {
-        if (window.scrollY >= 80) {
-          setNavbarTransparency(false);
-        } else {
-          setNavbarTransparency(true);
-        }
-      };
-
-      window.addEventListener('scroll', onScroll);
-      return () => {
-        window.removeEventListener('scroll', onScroll);
-      };
-    }
-  }, [isNavbarTransparent]);
+  const isNavbarTransparent = useNavbarScroll();
 
   const useNavbarState = (state1: string, state2: string) =>
     isNavbarTransparent ? state1 : state2;
 
   return (
     <Box
-      bg={useNavbarState('transparent', useColorModeValue('white', 'gray.100'))}
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      bg={
+        isOpen
+          ? 'white'
+          : useNavbarState(
+              'transparent',
+              useColorModeValue('white', 'gray.100')
+            )
+      }
       transition="all 0.5s ease-in-out"
       position={'fixed'}
       zIndex={'10'}
@@ -58,13 +49,14 @@ export default function WithSubnavigation() {
     >
       <Flex
         color={useNavbarState('white', useColorModeValue('white', 'gray.100'))}
+        py={useNavbarState('2rem', '1rem')}
         minH={{ base: '4rem', md: '5rem' }}
+        justifyContent={'space-between'}
+        transition="all 0.5s ease-out"
+        px={{ base: '1rem' }}
+        align={'center'}
         maxW={'6xl'}
         mx={'auto'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        align={'center'}
-        justifyContent={'space-between'}
       >
         <Flex
           ml={{ base: -2 }}
@@ -74,7 +66,15 @@ export default function WithSubnavigation() {
           <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              isOpen ? (
+                <CloseIcon color={isOpen ? 'gray.600' : 'white'} w={3} h={3} />
+              ) : (
+                <HamburgerIcon
+                  color={isNavbarTransparent ? 'white' : 'gray.600'}
+                  w={5}
+                  h={5}
+                />
+              )
             }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
