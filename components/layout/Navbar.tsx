@@ -106,7 +106,7 @@ const DesktopNav = () => {
     isNavbarTransparent ? state1 : state2;
 
   const linkColor = useNavbarState('white', 'gray.600');
-  const linkHoverColor = useNavbarState('gray.200', 'white');
+  const linkHoverColor = useNavbarState('gray.200', 'gray.500');
   const popoverContentBgColor = useNavbarState('white', 'gray.800');
 
   return (

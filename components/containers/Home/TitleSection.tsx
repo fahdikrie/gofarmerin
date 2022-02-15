@@ -20,14 +20,15 @@ export default function TitleSection() {
         w={'full'}
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
-        bgGradient={'linear(to-t, blackAlpha.200, #ffffff65.100)'}
+        bgGradient={'linear(to-t, blackAlpha.500, blackAlpha.600)'}
       >
-        <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
+        <Stack maxW={'2xl'} align={'center'} spacing={6}>
           <Text
             color={'white'}
             fontWeight={700}
             lineHeight={1.2}
-            fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
+            fontFamily={'sans-serif'}
+            fontSize={{ base: '3xl', md: '6xl' }}
           >
             Go Farmer Nusantara
           </Text>
@@ -38,15 +39,7 @@ export default function TitleSection() {
               color={'white'}
               _hover={{ bg: 'blue.500' }}
             >
-              Show me more
-            </Button>
-            <Button
-              bg={'whiteAlpha.300'}
-              rounded={'full'}
-              color={'white'}
-              _hover={{ bg: 'whiteAlpha.500' }}
-            >
-              Show me more
+              Lihat Produk
             </Button>
           </Stack>
         </Stack>
