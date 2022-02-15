@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
@@ -23,12 +24,14 @@ import Image from 'next/image';
 
 import { NavItemType, NAV_ITEMS } from './constants';
 import useNavbarScroll from 'hooks/useNavbarScroll';
+import useWindowSize from 'hooks/useWindowSize';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const isNavbarTransparent = useNavbarScroll();
+  const { width } = useWindowSize();
 
-  const useNavbarState = (state1: string, state2: string) =>
+  const useNavbarState = (state1: any, state2: any) =>
     isNavbarTransparent ? state1 : state2;
 
   return (
@@ -40,7 +43,10 @@ export default function WithSubnavigation() {
       w={'100vw'}
     >
       <Flex
-        py={useNavbarState('2rem', '1rem')}
+        py={useNavbarState(
+          { base: '1.25rem', md: '2rem' },
+          { base: '0.75rem', md: '1rem' }
+        )}
         minH={{ base: '4rem', md: '5rem' }}
         justifyContent={'space-between'}
         transition="all 0.3s ease-out"
@@ -78,14 +84,25 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           w={'100%'}
         >
-          <Image
-            src={'/icons/logo/logo-1.png'}
-            alt={'logo-1'}
-            layout={'fixed'}
-            width={134.6}
-            height={36}
-            priority
-          />
+          {width && width > 767.9 ? (
+            <Image
+              src={'/icons/logo/logo-1.png'}
+              alt={'logo-1'}
+              layout={'fixed'}
+              width={134.6}
+              height={36}
+              priority
+            />
+          ) : (
+            <Image
+              src={'/icons/logo/logo-2.png'}
+              alt={'logo-1'}
+              layout={'fixed'}
+              width={50}
+              height={50}
+              priority
+            />
+          )}
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
