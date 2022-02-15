@@ -22,26 +22,47 @@ import {
 import Image from 'next/image';
 
 import { NavItemType, NAV_ITEMS } from './constants';
+import { useEffect, useState } from 'react';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const [isNavbarTransparent, setNavbarTransparency] = useState(true);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const onScroll = () => {
+        if (window.scrollY >= 80) {
+          setNavbarTransparency(false);
+        } else {
+          setNavbarTransparency(true);
+        }
+      };
+
+      window.addEventListener('scroll', onScroll);
+      return () => {
+        window.removeEventListener('scroll', onScroll);
+      };
+    }
+  }, [isNavbarTransparent]);
+
+  const useNavbarState = (state1: string, state2: string) =>
+    isNavbarTransparent ? state1 : state2;
 
   return (
     <Box
+      bg={useNavbarState('transparent', useColorModeValue('white', 'gray.100'))}
+      transition="all 0.5s ease-in-out"
       position={'fixed'}
+      zIndex={'10'}
       w={'100vw'}
-      bg={useColorModeValue('white', 'gray.800')}
     >
       <Flex
-        color={useColorModeValue('gray.600', 'white')}
+        color={useNavbarState('white', useColorModeValue('white', 'gray.100'))}
         minH={{ base: '4rem', md: '5rem' }}
         maxW={'6xl'}
         mx={'auto'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
         justifyContent={'space-between'}
       >
@@ -69,8 +90,8 @@ export default function WithSubnavigation() {
             src={'/icons/logo/logo-1.png'}
             alt={'logo-1'}
             layout={'fixed'}
-            width={202}
-            height={54}
+            width={134.6}
+            height={36}
             priority
           />
 
