@@ -22,7 +22,7 @@ export default function TitleSection() {
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-t, blackAlpha.600, blackAlpha.400)'}
-        boxShadow={'0px 0px 10px 1px #6e5509'}
+        boxShadow={'0px 0px 10px 1px #8f7833'}
       >
         <Stack maxW={'2xl'} align={'center'} spacing={6}>
           <Text
