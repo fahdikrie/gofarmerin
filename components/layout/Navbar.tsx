@@ -37,6 +37,7 @@ export default function WithSubnavigation() {
   return (
     <Box
       bg={isOpen ? 'white' : useNavbarState('transparent', 'white')}
+      boxShadow={useNavbarState('unset', '0px 0px 10px 1px #817d7da0')}
       transition="all 0.3s ease-out"
       position={'fixed'}
       zIndex={'10'}
@@ -44,7 +45,7 @@ export default function WithSubnavigation() {
     >
       <Flex
         py={useNavbarState(
-          { base: '1.25rem', md: '2rem' },
+          { base: '1.25rem', md: '2.25rem' },
           { base: '0.75rem', md: '1rem' }
         )}
         minH={{ base: '4rem', md: '5rem' }}
@@ -86,8 +87,8 @@ export default function WithSubnavigation() {
         >
           {width && width > 767.9 ? (
             <Image
-              src={'/icons/logo/logo-1.png'}
-              alt={'logo-1'}
+              src={'/icons/logo/logo1.png'}
+              alt={'logo1'}
               layout={'fixed'}
               width={134.6}
               height={36}
@@ -95,8 +96,8 @@ export default function WithSubnavigation() {
             />
           ) : (
             <Image
-              src={'/icons/logo/logo-2.png'}
-              alt={'logo-1'}
+              src={'/icons/logo/logo2.png'}
+              alt={'logo1'}
               layout={'fixed'}
               width={50}
               height={50}
