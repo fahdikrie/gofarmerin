@@ -25,14 +25,36 @@ import Image from 'next/image';
 import { NavItemType, NAV_ITEMS } from './constants';
 import useNavbarScroll from 'hooks/useNavbarScroll';
 import useWindowSize from 'hooks/useWindowSize';
-import { useEffect } from 'react';
+
+const NavLogoComponent = ({ width }: { width: number }) => {
+  if (width > 767.9)
+    return (
+      <Image
+        src={'/icons/logo/logo1.png'}
+        alt={'logo1'}
+        layout={'fixed'}
+        width={134.6}
+        height={36}
+        priority
+      />
+    );
+  else
+    return (
+      <Image
+        src={'/icons/logo/logo2.png'}
+        alt={'logo1'}
+        layout={'fixed'}
+        width={50}
+        height={50}
+        priority
+      />
+    );
+};
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const isNavbarTransparent = useNavbarScroll();
   const { width } = useWindowSize();
-
-  useEffect(() => console.log(width), [width]);
 
   const useNavbarState = (state1: any, state2: any) =>
     isNavbarTransparent ? state1 : state2;
@@ -88,25 +110,7 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           w={'100%'}
         >
-          {width && width > 767.9 ? (
-            <Image
-              src={'/icons/logo/logo1.png'}
-              alt={'logo1'}
-              layout={'fixed'}
-              width={134.6}
-              height={36}
-              priority
-            />
-          ) : (
-            <Image
-              src={'/icons/logo/logo2.png'}
-              alt={'logo1'}
-              layout={'fixed'}
-              width={50}
-              height={50}
-              priority
-            />
-          )}
+          {width && <NavLogoComponent width={width} />}
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
