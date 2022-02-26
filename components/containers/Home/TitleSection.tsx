@@ -43,7 +43,7 @@ export default function TitleSection() {
             fontSize={{ base: 'lg', md: 'xl' }}
             marginTop={'0.5rem!important'}
           >
-            Your one stop solution for agricultural product needs.
+            One stop solution for your agricultural product needs.
           </Box>
           <Stack direction={'row'}>
             <Button
@@ -52,7 +52,7 @@ export default function TitleSection() {
               color={'white'}
               _hover={{ bg: 'green.700' }}
             >
-              Lihat Produk
+              See Products
             </Button>
           </Stack>
         </Stack>
