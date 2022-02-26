@@ -25,11 +25,14 @@ import Image from 'next/image';
 import { NavItemType, NAV_ITEMS } from './constants';
 import useNavbarScroll from 'hooks/useNavbarScroll';
 import useWindowSize from 'hooks/useWindowSize';
+import { useEffect } from 'react';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const isNavbarTransparent = useNavbarScroll();
   const { width } = useWindowSize();
+
+  useEffect(() => console.log(width), [width]);
 
   const useNavbarState = (state1: any, state2: any) =>
     isNavbarTransparent ? state1 : state2;
