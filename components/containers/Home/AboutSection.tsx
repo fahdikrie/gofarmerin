@@ -1,4 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
+import { default as Products } from 'components/elements/AboutCarousel';
 
 export default function AboutSection() {
   return (
@@ -11,14 +12,33 @@ export default function AboutSection() {
     >
       <Box maxW={'6xl'} mx={'auto'} py={'2rem'} h={'100%'}>
         <Text
+          className={'section-title'}
           fontWeight={700}
           lineHeight={1.2}
-          color={'green.600'}
+          color={'green.800'}
           fontFamily={'sans-serif'}
           fontSize={{ base: 'xl', md: '3xl' }}
         >
           About Us
         </Text>
+
+        <Text
+          className={'section-about'}
+          fontSize={{ base: 'xs', md: 'md' }}
+          color={'#344B35'}
+          fontWeight={600}
+          mt={'1rem'}
+          mx={'auto'}
+          w={'80%'}
+        >
+          PT. Nusantara Farmer Jaya (Go Farmer Nusantara) is a supplier and
+          exporter of agricultural products from Indonesia. We provide various
+          types of agricultural products, especially coconut products, spices,
+          and vegetables. Our company can also help you to get other good
+          quality of the agricultural product.
+        </Text>
+
+        <Products />
       </Box>
     </Box>
   );
