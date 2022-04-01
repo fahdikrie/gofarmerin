@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Button, Text } from '@chakra-ui/react';
 import { default as Products } from 'components/elements/AboutCarousel';
 import { ABOUT_CONTENT, ABOUT_TITLE } from './constants';
 
@@ -39,6 +39,17 @@ export default function AboutSection() {
         <Box className={'about-products'} mt={'2rem'}>
           <Products />
         </Box>
+
+        <Button
+          mt={'1.5rem'}
+          bg={'green.600'}
+          rounded={'full'}
+          color={'white'}
+          fontFamily={'Source Sans Pro'}
+          _hover={{ bg: 'green.700' }}
+        >
+          See All Products
+        </Button>
       </Box>
     </Box>
   );

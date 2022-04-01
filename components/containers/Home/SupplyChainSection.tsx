@@ -8,7 +8,6 @@ import {
   Button,
   Image,
   Icon,
-  IconButton,
   createIcon,
   IconProps,
   useColorModeValue,
@@ -32,6 +31,7 @@ export default function SupplyChainSection() {
             <Text
               as={'span'}
               position={'relative'}
+              color={'green.900'}
               _after={{
                 content: "''",
                 width: 'full',
@@ -39,21 +39,24 @@ export default function SupplyChainSection() {
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'red.400',
+                bg: '#F0CF68',
                 zIndex: -1,
               }}
             >
-              Write once,
+              Extensive
             </Text>
             <br />
-            <Text as={'span'} color={'red.400'}>
-              use everywhere!
+            <Text as={'span'} color={'green.600'}>
+              Supply Chain
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            Snippy is a rich coding snippets app that lets you create your own
-            code snippets, categorize them, and even sync them in the cloud so
-            you can use them anywhere. All that is free!
+          <Text
+            color={'gray.700'}
+            fontSize={'lg'}
+            fontFamily={'Source Sans Pro'}
+          >
+            We have an extensive supply chain that is supported by experienced
+            and trusted farmers from all over Indonesia to meet customer demand.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -95,7 +98,7 @@ export default function SupplyChainSection() {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={useColorModeValue('yellow.50', 'yellow.400')}
           />
           <Box
             position={'relative'}
@@ -105,27 +108,13 @@ export default function SupplyChainSection() {
             width={'full'}
             overflow={'hidden'}
           >
-            <IconButton
-              aria-label={'Play Button'}
-              variant={'ghost'}
-              _hover={{ bg: 'transparent' }}
-              icon={<PlayIcon w={12} h={12} />}
-              size={'lg'}
-              color={'white'}
-              position={'absolute'}
-              left={'50%'}
-              top={'50%'}
-              transform={'translateX(-50%) translateY(-50%)'}
-            />
             <Image
               alt={'Hero Image'}
               fit={'cover'}
               align={'center'}
               w={'100%'}
               h={'100%'}
-              src={
-                'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-              }
+              src={'/images/agricultural1.jpeg'}
             />
           </Box>
         </Flex>
