@@ -26,10 +26,10 @@ export default function TitleSection() {
       >
         <Stack maxW={'2xl'} align={'center'} spacing={6}>
           <Text
-            fontWeight={700}
+            fontWeight={900}
             lineHeight={1.2}
             color={'#F0CF68'}
-            fontFamily={'sans-serif'}
+            fontFamily={'Playfair Display'}
             fontSize={{ base: '3xl', md: '6xl' }}
           >
             Go Farmer Nusantara
@@ -39,7 +39,9 @@ export default function TitleSection() {
           </Text>
           <Box
             color={'white'}
+            textAlign={'center'}
             fontWeight={'600'}
+            fontFamily={'Source Sans Pro'}
             fontSize={{ base: 'lg', md: 'xl' }}
             marginTop={'0.5rem!important'}
           >
@@ -50,6 +52,7 @@ export default function TitleSection() {
               bg={'green.600'}
               rounded={'full'}
               color={'white'}
+              fontFamily={'Source Sans Pro'}
               _hover={{ bg: 'green.700' }}
             >
               See Products

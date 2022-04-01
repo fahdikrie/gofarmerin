@@ -755,6 +755,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/playfair-display@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/playfair-display/-/playfair-display-4.5.6.tgz#f2f71a59185e6cf5ac2fe2e20e27e93d58838446"
+  integrity sha512-2QWIG+SBlmNHcLG8+wqu1vF1TUP/v5wVB00vJqLTGPRKCvE2T7tajIOl+y6ud+tfuQ7tNdbna41PINe1YWVCyA==
+
+"@fontsource/source-sans-pro@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/source-sans-pro/-/source-sans-pro-4.5.6.tgz#1c74aa0168f0ad851e7c69a5ff25914c7691b6cb"
+  integrity sha512-MPv0Ye2OmcRD4wQ/7lOkysQpXpWkDSqZ2QHdNNLj7CQVtG03BScLMYQXZbYNhNMbH518tdMFewqDSu+/ikAMTg==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.3.tgz#f2564c744b387775b436418491f15fce6601f63e"
