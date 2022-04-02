@@ -12,7 +12,7 @@ export default function TitleSection() {
   return (
     <Flex
       w={'full'}
-      h={'100vh'}
+      h={'70vh'}
       backgroundImage={'/images/cloves1.jpeg'}
       backgroundSize={'cover'}
       backgroundPosition={'center center'}

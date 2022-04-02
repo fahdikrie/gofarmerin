@@ -14,11 +14,12 @@ export default function AboutSection() {
       <Box maxW={'6xl'} mx={'auto'} pt={'2rem'} pb={'2.5rem'} h={'100%'}>
         <Text
           className={'about-title'}
-          fontWeight={700}
+          fontWeight={900}
           lineHeight={1.2}
           color={'green.800'}
           fontFamily={'Playfair Display'}
-          fontSize={{ base: 'xl', md: '3xl' }}
+          fontSize={{ base: '2xl', md: '4xl' }}
+          textDecoration={'underline'}
         >
           {ABOUT_TITLE}
         </Text>
@@ -36,7 +37,7 @@ export default function AboutSection() {
           {ABOUT_CONTENT}
         </Text>
 
-        <Box className={'about-products'} mt={'2rem'}>
+        <Box className={'about-products'} mt={'4rem'}>
           <Products />
         </Box>
 
