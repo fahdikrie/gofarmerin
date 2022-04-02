@@ -3,7 +3,7 @@ import AboutSection from './AboutSection';
 import SupplyChainSection from './SupplyChainSection';
 import HighestQualityProductSection from './HighestQualityProductSection';
 import EmpowerIndonesianFarmerSection from './EmpowerIndonesianFarmerSection';
-import OurValuesSection from './OurValuesSection';
+// import OurValuesSection from './OurValuesSection';
 import FAQSection from './FAQSection';
 
 const Home = () => (
@@ -13,7 +13,7 @@ const Home = () => (
     <SupplyChainSection />
     <HighestQualityProductSection />
     <EmpowerIndonesianFarmerSection />
-    <OurValuesSection />
+    {/* <OurValuesSection /> */}
     <FAQSection />
   </>
 );

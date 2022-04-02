@@ -5,16 +5,16 @@ export default function FAQSection() {
     <Box
       id={'faq'}
       h={'fit-content'}
-      bg={'#9A481F'}
+      bg={'#F0CF68'}
       textAlign={'center'}
-      boxShadow={'0px 0px 10px 1px #7a4125'}
+      boxShadow={'0px 0px 10px 1px #cfcfcf'}
     >
       <Box maxW={'6xl'} mx={'auto'} pt={'2rem'} pb={'2.5rem'} h={'100%'}>
         <Text
           className={'faq-title'}
           fontWeight={900}
           lineHeight={1.2}
-          color={'#F0CF68'}
+          color={'green.800'}
           fontFamily={'Playfair Display'}
           fontSize={{ base: '2xl', md: '4xl' }}
           textDecoration={'underline'}
