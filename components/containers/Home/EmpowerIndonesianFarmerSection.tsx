@@ -24,14 +24,6 @@ export default function EmpowerIndonesianFarmerSection() {
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
           >
             <Text
-              as={'span'}
-              color={'green.600'}
-              fontFamily={'Playfair Display'}
-            >
-              Empowering
-            </Text>
-            <br />
-            <Text
               fontFamily={'Playfair Display'}
               as={'span'}
               position={'relative'}
@@ -46,6 +38,14 @@ export default function EmpowerIndonesianFarmerSection() {
                 bg: '#F0CF68',
                 zIndex: -1,
               }}
+            >
+              Empowering
+            </Text>
+            <br />
+            <Text
+              as={'span'}
+              color={'green.600'}
+              fontFamily={'Playfair Display'}
             >
               Indonesian Farmer
             </Text>
