@@ -1,5 +1,13 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 
-const ProductPage: NextPage = () => <></>;
+import Layout from 'components/layout';
 
-export default ProductPage;
+const Products: NextPage = () => {
+  return (
+    <Layout>
+      <></>
+    </Layout>
+  );
+};
+
+export default Products;

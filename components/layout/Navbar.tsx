@@ -143,11 +143,12 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? '#'}
+                href={navItem.href}
                 fontSize={'md'}
                 fontFamily={'Source Sans Pro'}
                 fontWeight={600}
                 color={linkColor}
+                onClick={navItem.onClick}
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
@@ -180,7 +181,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItemType) => {
+const DesktopSubNav = ({ label, href, subLabel, onClick }: NavItemType) => {
   return (
     <Link
       href={href}
@@ -188,6 +189,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItemType) => {
       display={'block'}
       p={2}
       rounded={'md'}
+      onClick={onClick}
       _hover={{ bg: 'pink.50' }}
     >
       <Stack direction={'row'} align={'center'}>
@@ -227,7 +229,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItemType) => {
+const MobileNavItem = ({ label, children, href, onClick }: NavItemType) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -235,7 +237,8 @@ const MobileNavItem = ({ label, children, href }: NavItemType) => {
       <Flex
         py={2}
         as={Link}
-        href={href ?? '#'}
+        href={href}
+        onClick={onClick}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -267,7 +270,12 @@ const MobileNavItem = ({ label, children, href }: NavItemType) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link
+                onClick={child.onClick}
+                key={child.label}
+                py={2}
+                href={child.href}
+              >
                 {child.label}
               </Link>
             ))}
