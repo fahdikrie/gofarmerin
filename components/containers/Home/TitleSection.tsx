@@ -30,7 +30,7 @@ export default function TitleSection() {
             lineHeight={1.2}
             color={'#F0CF68'}
             fontFamily={'Playfair Display'}
-            fontSize={{ base: '3xl', md: '6xl' }}
+            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
           >
             Go Farmer Nusantara
             <Text d={'inline'} fontSize={{ base: '1xl', md: '2xl' }}>

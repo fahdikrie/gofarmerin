@@ -14,7 +14,7 @@ export default function EmpowerIndonesianFarmerSection() {
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 15, md: 20 }}
+        py={{ base: 12, md: 20 }}
         direction={'column'}
       >
         <Stack textAlign={'center'}>

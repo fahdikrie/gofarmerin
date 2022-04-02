@@ -50,11 +50,6 @@ export const ABOUT_IMAGES = [
     url: '',
   },
   {
-    src: '/images/products/1-cabbage.jpeg',
-    alt: '1-cabbage.jpeg',
-    url: '',
-  },
-  {
     src: '/images/products/9-black-pepper.jpeg',
     alt: '9-black-pepper.jpeg',
     url: '',

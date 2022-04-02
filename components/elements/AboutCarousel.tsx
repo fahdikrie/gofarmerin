@@ -51,7 +51,7 @@ const AboutCarousel = () => {
           },
         }}
       >
-        {ABOUT_IMAGES.map((image, id) => (
+        {ABOUT_IMAGES.reverse().map((image, id) => (
           <SwiperSlide key={id}>
             <Box w="273px" h="273px">
               <Image layout="fill" src={image.src} alt={image.alt} />

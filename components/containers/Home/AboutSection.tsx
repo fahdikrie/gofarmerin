@@ -30,14 +30,14 @@ export default function AboutSection() {
           color={'#344B35'}
           fontFamily={'Source Sans Pro'}
           fontWeight={400}
-          mt={'1rem'}
+          mt={'1.5rem'}
           mx={'auto'}
           w={'80%'}
         >
           {ABOUT_CONTENT}
         </Text>
 
-        <Box className={'about-products'} mt={'4rem'}>
+        <Box className={'about-products'} mt={{ base: '2rem', md: '4rem' }}>
           <Products />
         </Box>
 

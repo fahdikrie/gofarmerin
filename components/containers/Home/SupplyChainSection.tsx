@@ -17,7 +17,7 @@ export default function SupplyChainSection() {
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        pt={{ base: 15, md: 20 }}
+        pt={{ base: 12, md: 20 }}
         direction={{ base: 'column', md: 'row-reverse' }}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }} textAlign={'right'}>
