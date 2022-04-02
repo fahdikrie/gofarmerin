@@ -30,9 +30,21 @@ const Logo = ({ color }: { color: string }) => {
   );
 };
 
-const ListHeader = ({ children }: { children: ReactNode }) => {
+const ListHeader = ({
+  children,
+  isHidden,
+}: {
+  children: ReactNode;
+  isHidden?: boolean;
+}) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Text
+      fontWeight={'500'}
+      visibility={isHidden ? 'hidden' : 'visible'}
+      display={{ base: isHidden ? 'none' : 'block', md: 'block' }}
+      fontSize={'lg'}
+      mb={2}
+    >
       {children}
     </Text>
   );
@@ -46,7 +58,7 @@ export default function LargeWithLogoLeft() {
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
+          templateColumns={{ sm: '1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
           spacing={8}
         >
           <Stack spacing={6}>
@@ -58,36 +70,30 @@ export default function LargeWithLogoLeft() {
             </Text>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Product</ListHeader>
-            <Link href={'#'}>Overview</Link>
-            <Link href={'#'}>Features</Link>
-            <Link href={'#'}>Tutorials</Link>
-            <Link href={'#'}>Pricing</Link>
-            <Link href={'#'}>Releases</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Press</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact</Link>
-            <Link href={'#'}>Partners</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Legal</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Status</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
             <ListHeader>Follow Us</ListHeader>
             <Link href={'#'}>Facebook</Link>
             <Link href={'#'}>Twitter</Link>
             <Link href={'#'}>Dribbble</Link>
             <Link href={'#'}>Instagram</Link>
             <Link href={'#'}>LinkedIn</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Products</ListHeader>
+            <Link href={'#'}>Overview</Link>
+            <Link href={'#'}>Features</Link>
+            <Link href={'#'}>Tutorials</Link>
+            <Link href={'#'}>Pricing</Link>
+            <Link href={'#'}>Releases</Link>
+            <Link href={'#'}>Releases</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader isHidden>Company</ListHeader>
+            <Link href={'#'}>About</Link>
+            <Link href={'#'}>Press</Link>
+            <Link href={'#'}>Careers</Link>
+            <Link href={'#'}>Contact</Link>
+            <Link href={'#'}>Partners</Link>
+            <Link href={'#'}>Partners</Link>
           </Stack>
         </SimpleGrid>
       </Container>
