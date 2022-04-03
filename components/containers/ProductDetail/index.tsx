@@ -79,6 +79,9 @@ export default function ProductDetail({ data }: { data: ProductType }) {
           h={{ base: '300px', md: '450px' }}
           d={'block'}
           mx={'auto'}
+          p={'2px'}
+          bg={'#F0CF68'}
+          borderRadius={'3px'}
         >
           {data && (
             <Image
