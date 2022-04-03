@@ -25,6 +25,7 @@ import Image from 'next/image';
 import { NavItemType, NAV_ITEMS } from './constants';
 import useNavbarScroll from 'hooks/useNavbarScroll';
 import useWindowSize from 'hooks/useWindowSize';
+import { useRouter } from 'next/router';
 
 const NavLogoComponent = ({ width }: { width: number }) => {
   if (width > 767.9)
@@ -131,6 +132,9 @@ const DesktopNav = () => {
   const useNavbarState = (state1: string, state2: string) =>
     isNavbarTransparent ? state1 : state2;
 
+  const router = useRouter();
+  const isNotOnHome = router.pathname !== '/';
+
   const linkColor = useNavbarState('white', 'gray.600');
   const linkHoverColor = useNavbarState('gray.200', 'gray.500');
   const popoverContentBgColor = useNavbarState('white', 'gray.800');
@@ -143,7 +147,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href}
+                href={isNotOnHome ? navItem.href : undefined}
                 fontSize={'md'}
                 fontFamily={'Source Sans Pro'}
                 fontWeight={600}
@@ -182,13 +186,16 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel, onClick }: NavItemType) => {
+  const router = useRouter();
+  const isNotOnHome = router.pathname !== '/';
+
   return (
     <Link
-      href={href}
       role={'group'}
       display={'block'}
       p={2}
       rounded={'md'}
+      href={isNotOnHome ? href : undefined}
       onClick={onClick}
       _hover={{ bg: 'pink.50' }}
     >
@@ -232,13 +239,16 @@ const MobileNav = () => {
 const MobileNavItem = ({ label, children, href, onClick }: NavItemType) => {
   const { isOpen, onToggle } = useDisclosure();
 
+  const router = useRouter();
+  const isNotOnHome = router.pathname !== '/';
+
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
         as={Link}
-        href={href}
         onClick={onClick}
+        href={isNotOnHome ? href : undefined}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -271,10 +281,10 @@ const MobileNavItem = ({ label, children, href, onClick }: NavItemType) => {
           {children &&
             children.map((child) => (
               <Link
+                href={isNotOnHome ? child.href : undefined}
                 onClick={child.onClick}
                 key={child.label}
                 py={2}
-                href={child.href}
               >
                 {child.label}
               </Link>

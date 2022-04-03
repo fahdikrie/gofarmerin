@@ -1,7 +1,10 @@
 import { Box, Button, Text } from '@chakra-ui/react';
 import { default as Products } from 'components/elements/AboutCarousel';
+import { useRouter } from 'next/router';
 
 export default function AboutSection() {
+  const router = useRouter();
+
   return (
     <Box
       id={'about'}
@@ -51,6 +54,7 @@ export default function AboutSection() {
           color={'white'}
           fontFamily={'Source Sans Pro'}
           _hover={{ bg: 'green.700' }}
+          onClick={() => router.push('/products')}
         >
           See All Products
         </Button>

@@ -12,10 +12,12 @@ export interface NavItemType {
 export const NAV_ITEMS: Array<NavItemType> = [
   {
     label: 'Home',
+    href: '/',
     onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
   },
   {
     label: 'About',
+    href: '/#about',
     onClick: () =>
       window.scrollTo({
         top: (60 * window.innerHeight) / 100,
@@ -32,6 +34,7 @@ export const NAV_ITEMS: Array<NavItemType> = [
   },
   {
     label: 'Contact',
+    href: '/#contact',
     onClick: () =>
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }),
   },

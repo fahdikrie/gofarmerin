@@ -7,8 +7,11 @@ import {
   useBreakpointValue,
   Box,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
 export default function TitleSection() {
+  const router = useRouter();
+
   return (
     <Flex
       w={'full'}
@@ -53,6 +56,7 @@ export default function TitleSection() {
               rounded={'full'}
               color={'white'}
               fontFamily={'Source Sans Pro'}
+              onClick={() => router.push('/products')}
               _hover={{ bg: 'green.700' }}
             >
               See Products
