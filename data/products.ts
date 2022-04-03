@@ -3,8 +3,12 @@ export interface QuantityType {
   '40ft': string;
 }
 
+export interface ParamsType {
+  product: string;
+}
+
 export interface ProductType {
-  slug: string;
+  params: ParamsType;
   src: string;
   alt: string;
   url: string;
@@ -16,7 +20,9 @@ export interface ProductType {
 
 export const COCONUT_PRODUCTS: ProductType[] = [
   {
-    slug: 'coconut-semi-husked',
+    params: {
+      product: 'coconut-semi-husked',
+    },
     src: '/images/products/10-coconut-semi-husked.jpeg',
     alt: '10-coconut-semi-husked.jpeg',
     url: '/products/coconut-semi-husked',
@@ -37,7 +43,9 @@ export const COCONUT_PRODUCTS: ProductType[] = [
     },
   },
   {
-    slug: 'copra',
+    params: {
+      product: 'copra',
+    },
     src: '/images/products/11-copra.jpeg',
     alt: '11-copra.jpeg',
     url: '/products/copra',
@@ -61,7 +69,9 @@ export const COCONUT_PRODUCTS: ProductType[] = [
 
 export const SPICES_PRODUCT: ProductType[] = [
   {
-    slug: 'black-pepper',
+    params: {
+      product: 'black-pepper',
+    },
     src: '/images/products/9-black-pepper.jpeg',
     alt: '9-black-pepper.jpeg',
     url: '/products/black-pepper',
@@ -79,7 +89,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: 'white-pepper',
+    params: {
+      product: 'white-pepper',
+    },
     src: '/images/products/7-white-pepper.jpeg',
     alt: '7-white-pepper.jpeg',
     url: '/products/white-pepper',
@@ -97,7 +109,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: 'galangal',
+    params: {
+      product: 'galangal',
+    },
     src: '/images/products/3-galangal.jpeg',
     alt: '3-galangal.jpeg',
     url: '/products/galangal',
@@ -115,7 +129,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: 'clove',
+    params: {
+      product: 'clove',
+    },
     src: '/images/products/6-clove.jpeg',
     alt: '6-clove.jpeg',
     url: '/products/clove',
@@ -136,7 +152,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: 'onion',
+    params: {
+      product: 'onion',
+    },
     src: '/images/products/4-onion.jpeg',
     alt: '4-onion.jpeg',
     url: '/products/onion',
@@ -154,7 +172,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: 'ginger',
+    params: {
+      product: 'ginger',
+    },
     src: '/images/products/2-ginger.jpeg',
     alt: '2-ginger.jpeg',
     url: '/products/ginger',
@@ -174,7 +194,9 @@ export const SPICES_PRODUCT: ProductType[] = [
     },
   },
   {
-    slug: '-shallot',
+    params: {
+      product: 'shallot',
+    },
     src: '/images/products/12-shallot.jpeg',
     alt: '12-shallot.jpeg',
     url: '/products/shallot',
@@ -197,7 +219,9 @@ export const SPICES_PRODUCT: ProductType[] = [
 
 export const OTHER_PRODUCTS: ProductType[] = [
   {
-    slug: 'dry-corn',
+    params: {
+      product: 'dry-corn',
+    },
     src: '/images/products/5-dry-corn.jpeg',
     alt: '5-dry-corn.jpeg',
     url: '/products/dry-corn',
@@ -215,7 +239,9 @@ export const OTHER_PRODUCTS: ProductType[] = [
     },
   },
   {
-    slug: 'potato',
+    params: {
+      product: 'potato',
+    },
     src: '/images/products/8-potato.jpeg',
     alt: '8-potato.jpeg',
     url: '/products/potato',
@@ -235,7 +261,9 @@ export const OTHER_PRODUCTS: ProductType[] = [
     },
   },
   {
-    slug: 'cabbage',
+    params: {
+      product: 'cabbage',
+    },
     src: '/images/products/1-cabbage.jpeg',
     alt: '1-cabbage.jpeg',
     url: '/products/cabbage',
@@ -261,5 +289,9 @@ const PRODUCTS: ProductType[] = [
   ...SPICES_PRODUCT,
   ...OTHER_PRODUCTS,
 ];
+
+export const PRODUCT_PATHS = PRODUCTS.map((el) => {
+  return { params: { product: el.params.product, ...el } };
+});
 
 export default PRODUCTS;

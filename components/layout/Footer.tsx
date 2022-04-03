@@ -75,7 +75,7 @@ export default function LargeWithLogoLeft() {
               <Text
                 key={id}
                 cursor={'pointer'}
-                onClick={() => router.push(`/products/${el.slug}`)}
+                onClick={() => router.push(`/products/${el.params.product}`)}
               >
                 {el.name}
               </Text>
@@ -87,7 +87,7 @@ export default function LargeWithLogoLeft() {
               <Text
                 key={id}
                 cursor={'pointer'}
-                onClick={() => router.push(`/products/${el.slug}`)}
+                onClick={() => router.push(`/products/${el.params.product}`)}
               >
                 {el.name}
               </Text>
@@ -99,7 +99,7 @@ export default function LargeWithLogoLeft() {
               <Text
                 key={id}
                 cursor={'pointer'}
-                onClick={() => router.push(`/products/${el.slug}`)}
+                onClick={() => router.push(`/products/${el.params.product}`)}
               >
                 {el.name}
               </Text>
