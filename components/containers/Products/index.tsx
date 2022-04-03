@@ -27,7 +27,7 @@ export default function Products() {
           w={'full'}
           justify={'center'}
           px={useBreakpointValue({ base: 4, md: 8 })}
-          bgGradient={'linear(to-t, blackAlpha.600, blackAlpha.400)'}
+          bgGradient={'linear(to-t, blackAlpha.800, blackAlpha.700)'}
           boxShadow={'0px 0px 10px 1px #cfcfcf'}
         >
           <Stack maxW={'2xl'} align={'center'} spacing={6}>
