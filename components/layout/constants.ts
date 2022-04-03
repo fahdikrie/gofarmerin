@@ -28,10 +28,10 @@ export const NAV_ITEMS: Array<NavItemType> = [
     label: 'Products',
     onClick: () => Router.push('/products'),
   },
-  {
-    label: 'Gallery',
-    onClick: () => Router.push('/gallery'),
-  },
+  // {
+  //   label: 'Gallery',
+  //   onClick: () => Router.push('/gallery'),
+  // },
   {
     label: 'Contact',
     href: '/#contact',
