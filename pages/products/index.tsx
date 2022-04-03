@@ -1,13 +1,14 @@
 import type { NextPage } from 'next';
 
 import Layout from 'components/layout';
+import Products from 'components/containers/Products';
 
-const Products: NextPage = () => {
+const ProductsPage: NextPage = () => {
   return (
     <Layout>
-      <></>
+      <Products />
     </Layout>
   );
 };
 
-export default Products;
+export default ProductsPage;

@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
-import { ABOUT_IMAGES } from 'components/containers/Home/constants';
+import PRODUCTS from 'data/products';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -51,7 +51,7 @@ const AboutCarousel = () => {
           },
         }}
       >
-        {ABOUT_IMAGES.reverse().map((image, id) => (
+        {PRODUCTS.reverse().map((image, id) => (
           <SwiperSlide key={id}>
             <Box w="273px" h="273px">
               <Image layout="fill" src={image.src} alt={image.alt} />
