@@ -32,7 +32,13 @@ export default function FAQSection() {
         </Text>
 
         <Box className={'faq'} mt={{ base: '2rem', md: '4rem' }}>
-          <Accordion bg={'white'} borderRadius={'20px'} overflow={'hidden'}>
+          <Accordion
+            maxW={'80%'}
+            mx={'auto'}
+            bg={'white'}
+            borderRadius={'20px'}
+            overflow={'hidden'}
+          >
             {FAQ.map(({ question, answer }, id) => (
               <AccordionItem key={id}>
                 <h2>
