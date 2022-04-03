@@ -37,8 +37,6 @@ const AboutCarousel = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         breakpoints={{
           860: {
             slidesPerView: 2,
