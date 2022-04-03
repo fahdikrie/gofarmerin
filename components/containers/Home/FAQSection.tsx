@@ -7,6 +7,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from '@chakra-ui/react';
+import FAQ from 'data/faq';
 
 export default function FAQSection() {
   return (
@@ -32,39 +33,37 @@ export default function FAQSection() {
 
         <Box className={'faq'} mt={{ base: '2rem', md: '4rem' }}>
           <Accordion bg={'white'} borderRadius={'20px'} overflow={'hidden'}>
-            <AccordionItem>
-              <h2>
-                <AccordionButton bg={'gray.100'}>
-                  <Box flex="1" textAlign="left">
-                    Section 1 title
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton bg={'gray.100'}>
-                  <Box flex="1" textAlign="left">
-                    Section 2 title
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </AccordionPanel>
-            </AccordionItem>
+            {FAQ.map(({ question, answer }, id) => (
+              <AccordionItem key={id}>
+                <h2>
+                  <AccordionButton
+                    bg={'gray.100'}
+                    _focus={{
+                      outline: 'none',
+                      boxShadow: 'none',
+                    }}
+                  >
+                    <Box
+                      flex="1"
+                      textAlign="left"
+                      fontFamily={'Source Sans Pro'}
+                      fontWeight={'600'}
+                      fontSize={'lg'}
+                    >
+                      {question}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel
+                  pb={4}
+                  fontFamily={'Source Sans Pro'}
+                  lineHeight={'2'}
+                >
+                  {answer}
+                </AccordionPanel>
+              </AccordionItem>
+            ))}
           </Accordion>
         </Box>
       </Box>
