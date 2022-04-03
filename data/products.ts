@@ -1,5 +1,6 @@
 export const PRODUCTS = [
   {
+    slug: 'cabbage',
     src: '/images/products/1-cabbage.jpeg',
     alt: '1-cabbage.jpeg',
     url: '/products/cabbage',
@@ -19,6 +20,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'ginger',
     src: '/images/products/2-ginger.jpeg',
     alt: '2-ginger.jpeg',
     url: '/products/ginger',
@@ -38,6 +40,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'galangal',
     src: '/images/products/3-galangal.jpeg',
     alt: '3-galangal.jpeg',
     url: '/products/galangal',
@@ -55,6 +58,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'onion',
     src: '/images/products/4-onion.jpeg',
     alt: '4-onion.jpeg',
     url: '/products/onion',
@@ -72,6 +76,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'dry-corn',
     src: '/images/products/5-dry-corn.jpeg',
     alt: '5-dry-corn.jpeg',
     url: '/products/dry-corn',
@@ -89,6 +94,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'clove',
     src: '/images/products/6-clove.jpeg',
     alt: '6-clove.jpeg',
     url: '/products/clove',
@@ -109,6 +115,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'white-pepper',
     src: '/images/products/7-white-pepper.jpeg',
     alt: '7-white-pepper.jpeg',
     url: '/products/white-pepper',
@@ -126,6 +133,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'potato',
     src: '/images/products/8-potato.jpeg',
     alt: '8-potato.jpeg',
     url: '/products/potato',
@@ -145,6 +153,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'black-pepper',
     src: '/images/products/9-black-pepper.jpeg',
     alt: '9-black-pepper.jpeg',
     url: '/products/black-pepper',
@@ -162,6 +171,7 @@ export const PRODUCTS = [
     },
   },
   {
+    slug: 'coconut-semi-husked',
     src: '/images/products/10-coconut-semi-husked.jpeg',
     alt: '10-coconut-semi-husked.jpeg',
     url: '/products/coconut-semi-husked',
@@ -185,6 +195,7 @@ export const PRODUCTS = [
 
 export const COCONUT_PRODUCTS = [
   {
+    slug: 'coconut-semi-husked',
     src: '/images/products/10-coconut-semi-husked.jpeg',
     alt: '10-coconut-semi-husked.jpeg',
     url: '/products/coconut-semi-husked',
@@ -205,6 +216,7 @@ export const COCONUT_PRODUCTS = [
     },
   },
   {
+    slug: 'copra',
     src: '/images/products/11-copra.jpeg',
     alt: '11-copra.jpeg',
     url: '/products/copra',
@@ -228,6 +240,7 @@ export const COCONUT_PRODUCTS = [
 
 export const SPICES_PRODUCT = [
   {
+    slug: 'black-pepper',
     src: '/images/products/9-black-pepper.jpeg',
     alt: '9-black-pepper.jpeg',
     url: '/products/black-pepper',
@@ -245,6 +258,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: 'white-pepper',
     src: '/images/products/7-white-pepper.jpeg',
     alt: '7-white-pepper.jpeg',
     url: '/products/white-pepper',
@@ -262,6 +276,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: 'galangal',
     src: '/images/products/3-galangal.jpeg',
     alt: '3-galangal.jpeg',
     url: '/products/galangal',
@@ -279,6 +294,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: 'clove',
     src: '/images/products/6-clove.jpeg',
     alt: '6-clove.jpeg',
     url: '/products/clove',
@@ -299,6 +315,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: 'onion',
     src: '/images/products/4-onion.jpeg',
     alt: '4-onion.jpeg',
     url: '/products/onion',
@@ -316,6 +333,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: 'ginger',
     src: '/images/products/2-ginger.jpeg',
     alt: '2-ginger.jpeg',
     url: '/products/ginger',
@@ -335,6 +353,7 @@ export const SPICES_PRODUCT = [
     },
   },
   {
+    slug: '-shallot',
     src: '/images/products/12-shallot.jpeg',
     alt: '12-shallot.jpeg',
     url: '/products/shallot',
@@ -357,6 +376,7 @@ export const SPICES_PRODUCT = [
 
 export const OTHER_PRODUCTS = [
   {
+    slug: 'dry-corn',
     src: '/images/products/5-dry-corn.jpeg',
     alt: '5-dry-corn.jpeg',
     url: '/products/dry-corn',
@@ -374,6 +394,7 @@ export const OTHER_PRODUCTS = [
     },
   },
   {
+    slug: 'potato',
     src: '/images/products/8-potato.jpeg',
     alt: '8-potato.jpeg',
     url: '/products/potato',
@@ -393,6 +414,7 @@ export const OTHER_PRODUCTS = [
     },
   },
   {
+    slug: 'cabbage',
     src: '/images/products/1-cabbage.jpeg',
     alt: '1-cabbage.jpeg',
     url: '/products/cabbage',
