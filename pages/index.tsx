@@ -5,7 +5,7 @@ import Home from 'components/containers/Home';
 
 const Homepage: NextPage = () => {
   return (
-    <Layout>
+    <Layout pageTitle={'Home'} pageDescription={''}>
       <Home />
     </Layout>
   );

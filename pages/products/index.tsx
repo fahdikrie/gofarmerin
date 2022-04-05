@@ -5,7 +5,10 @@ import Products from 'components/containers/Products';
 
 const ProductsPage: NextPage = () => {
   return (
-    <Layout>
+    <Layout
+      pageTitle={'Products'}
+      pageDescription={'Products of Go Farmer Nusantara'}
+    >
       <Products />
     </Layout>
   );

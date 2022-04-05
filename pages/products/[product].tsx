@@ -2,7 +2,6 @@ import Layout from 'components/layout';
 import ProductDetail from 'components/containers/ProductDetail';
 import PRODUCTS, { ProductType } from 'data/products';
 import { useRouter } from 'next/router';
-// import ProductNotFound from 'components/containers/ProductDetail/ProductNotFound';
 
 const ProductDetailPage = () => {
   const router = useRouter();
@@ -11,16 +10,8 @@ const ProductDetailPage = () => {
     (el) => el.params.product == productName
   ) as ProductType;
 
-  // if (data == undefined) {
-  //   return (
-  //     <Layout>
-  //       <ProductNotFound />
-  //     </Layout>
-  //   )
-  // }
-
   return (
-    <Layout>
+    <Layout pageTitle={data?.name ?? 'Produk'} pageDescription={data?.desc}>
       <ProductDetail data={data} />
     </Layout>
   );
