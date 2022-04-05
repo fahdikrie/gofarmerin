@@ -12,14 +12,14 @@ import { GalleryType } from 'data/products';
 const SCarousel = styled.div`
   display: block;
   margin: 0 auto;
-  width: calc(273px * 1);
+  width: calc(240px * 1);
 
   @media (min-width: 860px) {
-    width: calc((273px * 2) + (20px * 1));
+    width: calc((240px * 2) + (20px * 1));
   }
 
   @media (min-width: 1280px) {
-    width: calc((273px * 3) + (20px * 2));
+    width: calc((240px * 3) + (20px * 2));
   }
 `;
 
@@ -46,7 +46,7 @@ const DetailProductCarousel = ({ data }: { data: GalleryType[] }) => {
             <Box w="240px" h="320px">
               <Image
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 src={image.src}
                 alt={image.alt}
                 priority

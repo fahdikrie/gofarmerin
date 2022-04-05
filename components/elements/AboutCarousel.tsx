@@ -9,6 +9,7 @@ import PRODUCTS from 'data/products';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Link from 'next/link';
 
 const SCarousel = styled.div`
   display: block;
@@ -51,9 +52,11 @@ const AboutCarousel = () => {
       >
         {PRODUCTS.reverse().map((image, id) => (
           <SwiperSlide key={id}>
-            <Box w="273px" h="273px">
-              <Image layout="fill" src={image.src} alt={image.alt} priority />
-            </Box>
+            <Link href={image.url} passHref>
+              <Box cursor={'pointer'} w="273px" h="273px">
+                <Image layout="fill" src={image.src} alt={image.alt} priority />
+              </Box>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
