@@ -7,6 +7,11 @@ export interface ParamsType {
   product: string;
 }
 
+export interface GalleryType {
+  src: string;
+  alt: string;
+}
+
 export interface ProductType {
   params: ParamsType;
   src: string;
@@ -16,6 +21,7 @@ export interface ProductType {
   desc: string;
   quantity: QuantityType;
   specification: unknown;
+  gallery?: GalleryType[];
 }
 
 export const COCONUT_PRODUCTS: ProductType[] = [
@@ -41,6 +47,44 @@ export const COCONUT_PRODUCTS: ProductType[] = [
       Packaging: 'By Request',
       Origin: 'Banten, Lampung',
     },
+    gallery: [
+      {
+        src: '/images/products/coconut-semi-husked/1.jpg',
+        alt: 'coconut-semi-husked-1',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/2.jpg',
+        alt: 'coconut-semi-husked-2',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/3.jpg',
+        alt: 'coconut-semi-husked-3',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/4.jpg',
+        alt: 'coconut-semi-husked-4',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/5.jpg',
+        alt: 'coconut-semi-husked-5',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/6.jpg',
+        alt: 'coconut-semi-husked-6',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/7.jpg',
+        alt: 'coconut-semi-husked-7',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/8.jpg',
+        alt: 'coconut-semi-husked-8',
+      },
+      {
+        src: '/images/products/coconut-semi-husked/9.jpg',
+        alt: 'coconut-semi-husked-9',
+      },
+    ],
   },
   {
     params: {
@@ -87,6 +131,32 @@ export const SPICES_PRODUCT: ProductType[] = [
       Impurity: '0.5–1%',
       Origin: 'Lampung',
     },
+    gallery: [
+      {
+        src: '/images/products/black-pepper/1.jpg',
+        alt: 'black-pepper-1',
+      },
+      {
+        src: '/images/products/black-pepper/2.jpg',
+        alt: 'black-pepper-2',
+      },
+      {
+        src: '/images/products/black-pepper/3.jpg',
+        alt: 'black-pepper-3',
+      },
+      {
+        src: '/images/products/black-pepper/4.jpg',
+        alt: 'black-pepper-4',
+      },
+      {
+        src: '/images/products/black-pepper/5.jpg',
+        alt: 'black-pepper-5',
+      },
+      {
+        src: '/images/products/black-pepper/6.jpg',
+        alt: 'black-pepper-6',
+      },
+    ],
   },
   {
     params: {
@@ -107,6 +177,36 @@ export const SPICES_PRODUCT: ProductType[] = [
       Impurity: '1–2%',
       Origin: 'Lampung',
     },
+    gallery: [
+      {
+        src: '/images/products/white-pepper/1.jpg',
+        alt: 'white-pepper-1',
+      },
+      {
+        src: '/images/products/white-pepper/2.jpg',
+        alt: 'white-pepper-2',
+      },
+      {
+        src: '/images/products/white-pepper/3.jpg',
+        alt: 'white-pepper-3',
+      },
+      {
+        src: '/images/products/white-pepper/4.jpg',
+        alt: 'white-pepper-4',
+      },
+      {
+        src: '/images/products/white-pepper/5.jpg',
+        alt: 'white-pepper-5',
+      },
+      {
+        src: '/images/products/white-pepper/6.jpg',
+        alt: 'white-pepper-6',
+      },
+      {
+        src: '/images/products/white-pepper/7.jpg',
+        alt: 'white-pepper-7',
+      },
+    ],
   },
   {
     params: {

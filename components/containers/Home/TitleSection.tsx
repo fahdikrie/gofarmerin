@@ -36,9 +36,6 @@ export default function TitleSection() {
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
           >
             Go Farmer Nusantara
-            <Text d={'inline'} fontSize={{ base: '1xl', md: '2xl' }}>
-              ®
-            </Text>
           </Text>
           <Box
             color={'white'}

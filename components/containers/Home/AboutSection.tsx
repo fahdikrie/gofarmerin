@@ -1,5 +1,5 @@
 import { Box, Button, Text } from '@chakra-ui/react';
-import { default as Products } from 'components/elements/AboutCarousel';
+import { default as ProductsCarousel } from 'components/elements/AboutCarousel';
 import { useRouter } from 'next/router';
 
 export default function AboutSection() {
@@ -44,7 +44,7 @@ export default function AboutSection() {
         </Text>
 
         <Box className={'about-products'} mt={{ base: '2rem', md: '3rem' }}>
-          <Products />
+          <ProductsCarousel />
         </Box>
 
         <Button

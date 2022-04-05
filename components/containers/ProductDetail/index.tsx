@@ -16,6 +16,7 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react';
+import DetailProductCarousel from 'components/elements/DetailProductCarousel';
 import { ProductType } from 'data/products';
 import Image from 'next/image';
 
@@ -111,7 +112,12 @@ export default function ProductDetail({ data }: { data: ProductType }) {
           Quantity
         </Text>
 
-        <TableContainer maxW={'xl'} mx={'auto'} textAlign={'center'}>
+        <TableContainer
+          mt={'1.5rem'}
+          maxW={'xl'}
+          mx={'auto'}
+          textAlign={'center'}
+        >
           <Table>
             <TableCaption>Quantity based on container size</TableCaption>
             <Thead>
@@ -142,7 +148,12 @@ export default function ProductDetail({ data }: { data: ProductType }) {
         </Text>
 
         {data?.specification && (
-          <TableContainer maxW={'xl'} mx={'auto'} textAlign={'center'}>
+          <TableContainer
+            mt={'1.5rem'}
+            maxW={'xl'}
+            mx={'auto'}
+            textAlign={'center'}
+          >
             <Table>
               <TableCaption>Product specification</TableCaption>
               <Thead>
@@ -163,6 +174,22 @@ export default function ProductDetail({ data }: { data: ProductType }) {
               </Tbody>
             </Table>
           </TableContainer>
+        )}
+
+        {data?.gallery && (
+          <>
+            <Text
+              mt={'2rem'}
+              fontFamily={'Playfair Display'}
+              fontSize={{ base: 'xl', md: '2xl' }}
+            >
+              Product Gallery
+            </Text>
+
+            <Box mt={'1.5rem'}>
+              <DetailProductCarousel data={data?.gallery} />
+            </Box>
+          </>
         )}
       </Container>
     </>

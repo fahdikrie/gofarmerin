@@ -4,11 +4,10 @@ import { Box } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
-import PRODUCTS from 'data/products';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { GalleryType } from 'data/products';
 
 const SCarousel = styled.div`
   display: block;
@@ -22,13 +21,9 @@ const SCarousel = styled.div`
   @media (min-width: 1280px) {
     width: calc((273px * 3) + (20px * 2));
   }
-
-  @media (min-width: 1440px) {
-    width: calc((273px * 4) + (20px * 3));
-  }
 `;
 
-const AboutCarousel = () => {
+const DetailProductCarousel = ({ data }: { data: GalleryType[] }) => {
   return (
     <SCarousel>
       <Swiper
@@ -44,15 +39,18 @@ const AboutCarousel = () => {
           1280: {
             slidesPerView: 3,
           },
-          1440: {
-            slidesPerView: 4,
-          },
         }}
       >
-        {PRODUCTS.reverse().map((image, id) => (
+        {data.reverse().map((image, id) => (
           <SwiperSlide key={id}>
-            <Box w="273px" h="273px">
-              <Image layout="fill" src={image.src} alt={image.alt} priority />
+            <Box w="240px" h="320px">
+              <Image
+                layout="fill"
+                objectFit="cover"
+                src={image.src}
+                alt={image.alt}
+                priority
+              />
             </Box>
           </SwiperSlide>
         ))}
@@ -61,4 +59,4 @@ const AboutCarousel = () => {
   );
 };
 
-export default AboutCarousel;
+export default DetailProductCarousel;
